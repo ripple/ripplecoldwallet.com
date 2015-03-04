@@ -2,7 +2,7 @@
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Brainwallet - JavaScript Client-Side Bitcoin Address Generator</title>
+    <title>ColdWallet - JavaScript Client-Side Ripple Address Generator</title>
     <meta content="Client-side Bitcoin address and deterministic wallets generator, Base58 converter, transaction builder, signing and verifying messages with Bitcoin address" name="description" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="bitcoin address generator" name="description" />
@@ -26,49 +26,18 @@
     <header class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span></button> <a class="navbar-brand" href="/">Brainwallet</a>
+          <button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span> <span class="icon-bar">&nbsp;</span></button> <a class="navbar-brand" href="/">Ripple Cold Wallet</a>
         </div>
         <nav class="collapse navbar-collapse bs-navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active">
               <a data-toggle="tab" href="#generator">Generator</a></li>
-            <li><a data-toggle="tab" href="#chains" id="tab-chains">Chains</a></li>
+            <!--
             <li><a data-toggle="tab" href="#tx" id="tab-tx">Transactions</a></li>
             <li><a data-toggle="tab" href="#converter" id="tab-converter">Converter</a></li>
             <li><a data-toggle="tab" href="#sign" id="tab-sign">Sign</a></li>
             <li><a data-toggle="tab" href="#verify" id="tab-verify">Verify</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown" id="crCurrency">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="crSelect"><span id="crName">BTC</span>&nbsp;<b class="caret">&nbsp;</b></a>
-              <ul class="dropdown-menu dropdown-menu-two-column">
-                <li><a data-target="0x00" href="http://blockchain.info"><span class="pull-right">BTC</span>Bitcoin</a></li>
-		<li><a data-target="0x55" href="http://bitmark.co:3000"><span class="pull-right">BTM</span>Bitmark</a></li>
-                <li><a data-target="0x19" href="http://blackco.in"><span class="pull-right">BC</span>Blackcoin</a></li>
-                <li><a data-target="0x0B" href="http://explorer.cryptogenicbullion.org:2750"><span class="pull-right">CGB</span>Cryptogenic</a></li>
-                <li><a data-target="0x1E" href="http://www.chainbrowser.com/datacoin"><span class="pull-right">DTC</span>Datacoin</a></li>
-                <li><a data-target="0x00" href="http://d.evco.in/abe"><span class="pull-right">DVC</span>Devcoin</a></li>
-                <li><a data-target="0x1E" href="http://dgc.cryptocoinexplorer.com"><span class="pull-right">DGC</span>Digitalcoin</a></li>
-                <li><a data-target="0x1E" href="http://dogechain.info"><span class="pull-right">DOGE</span>Dogecoin</a></li>
-                <li><a data-target="0x0E" href="http://ftc.cryptocoinexplorer.com"><span class="pull-right">FTC</span>Feathercoin</a></li>
-				<li><a data-target="0x26" href="http://gamers-coin.org"><span class="pull-right">GMC</span>Gamerscoin</a></li>
-                <li><a data-target="0x66" href="http://exploretheblocks.com:2750"><span class="pull-right">IFC</span>Infinitecoin</a></li>
-                <li><a data-target="0x8A" href="http://d.evco.in/abe"><span class="pull-right">IXC</span>Ixcoin</a></li>
-                <li><a data-target="0x30" href="http://explorer.litecoin.net"><span class="pull-right">LTC</span>Litecoin</a></li>
-                <li><a data-target="0x32" href="http://www.chainbrowser.com/memorycoin"><span class="pull-right">MMC</span>Memorycoin</a></li>
-                <li><a data-target="0x34" href="http://explorer.dot-bit.org"><span class="pull-right">NMC</span>Namecoin</a></li>
-                <li><a data-target="0x08" href="http://nvc.cryptocoinexplorer.com"><span class="pull-right">NVC</span>Novacoin</a></li>
-                <li><a data-target="0x37" href="http://ppc.cryptocoinexplorer.com"><span class="pull-right">PPC</span>Peercoin</a></li>
-                <li><a data-target="0x17" href="http://primecoin.org"><span class="pull-right">XPM</span>Primecoin</a></li>
-                <li><a data-target="0x38" href="http://btsblock.com"><span class="pull-right">PTS</span>Protoshares</a></li>
-                <li><a data-target="0x3A" href="http://quarkexplorer.com"><span class="pull-right">QRK</span>Quarkcoin</a></li>
-                <li><a data-target="0x00" href="http://trc.cryptocoinexplorer.com"><span class="pull-right">TRC</span>Terracoin</a></li>
-                <li><a data-target="0x30" href="http://tacochain.info"><span class="pull-right">TC0</span>Tacocoin</a></li>
-                <li><a data-target="0x6F" href="http://blockexplorer.com/testnet"><span class="pull-right">TEST</span>Testnet</a></li>
-                <li><a data-target="0x47" href="http://explorer.vertcoin.org"><span class="pull-right">VTC</span>Vertcoin</a></li>
-                <li><a data-target="0x49" href="http://wdc.cryptocoinexplorer.com"><span class="pull-right">WDC</span>Worldcoin</a></li>
-                <li><a data-target="0x50" href="http://bit.usr.sh:2750"><span class="pull-right">ZET</span>Zetacoin</a></li>
-              </ul></li>
+            -->
           </ul>
         </nav>
       </div>
@@ -76,6 +45,7 @@
     <div class="container">
       <div class="tab-content">
         <!-- Generator -->
+        <h1 style='color:red'>Warning! This software is not ready for use of any kind!</h1>
         <div class="tab-pane fade in active" id="generator">
           <form action="/" class="form-horizontal" method="get">
             <fieldset>
@@ -422,7 +392,7 @@
         <hr />
         <footer>
           <p>
-            &copy; 2012&ndash;2015 <a href="https://twitter.com/brainwallet">Brainwallet</a><span class="pull-right">Powered by <a href="http://pages.github.com">GitHub Pages</a> &nbsp; <a href="https://github.com/brainwallet/brainwallet.github.io">GitHub Repository</a> &nbsp; <a href="https://github.com/brainwallet/brainwallet.github.io/archive/master.zip">Download ZIP</a></span>
+            &copy; 2012&ndash;2015 <a href="https://twitter.com/brainwallet">Zen Enterprises</a><span class="pull-right"><a href="https://github.com/brainwallet/brainwallet.github.io">GitHub Repository</a></span>
           </p>
         </footer>
       </div>
