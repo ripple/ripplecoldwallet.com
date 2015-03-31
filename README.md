@@ -1,3 +1,5 @@
+WORK IN PROGRESS / NOT USABLE WHATSOEVER
+
 JavaScript Client-Side Ripple Address Generator
 
 Notable features:
